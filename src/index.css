@@ -8,6 +8,8 @@
   --color-subtractButton-text: #ff0000;
   --color-multiplyButton-text: #daa520;
   --color-divideButton-text: #deb887;
+  --color-deleteButton-text: #ffff00;
+  --color-percentButton-text: #90ee90;
 }
 
 * {
@@ -50,11 +52,7 @@ button:hover {
 }
 
 .clearBtn {
-  font-size: 50px;
-  color: var(--color-clearButton-text);
-}
-
-.clearBtn:active {
+  font-size: 3.5rem;
   color: var(--color-clearButton-text);
 }
 
@@ -72,4 +70,13 @@ button:hover {
 
 .divideBtn {
   color: var(--color-divideButton-text);
+}
+
+.deleteBtn {
+  font-size: 3.5rem;
+  color: var(--color-deleteButton-text);
+}
+
+.percentBtn {
+  color: var(--color-percentButton-text);
 }

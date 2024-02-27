@@ -7,6 +7,7 @@ type Props = {
   onAllClear: () => void;
   onDelete: () => void;
   onEquals: () => void;
+  onPercentage: () => void;
 };
 
 function ButtonGrid({
@@ -15,6 +16,7 @@ function ButtonGrid({
   onAllClear,
   onDelete,
   onEquals,
+  onPercentage,
 }: Props) {
   return (
     <div className={style.buttonGrid}>
@@ -45,8 +47,11 @@ function ButtonGrid({
       <Button className="clearBtn" onClick={onAllClear}>
         AC
       </Button>
-      <Button className="clearBtn" onClick={onDelete}>
+      <Button className="deleteBtn" onClick={onDelete}>
         C
+      </Button>
+      <Button className="percentBtn" onClick={onPercentage}>
+        %
       </Button>
     </div>
   );

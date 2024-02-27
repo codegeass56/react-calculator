@@ -43,6 +43,11 @@ function Calculator() {
     setOverwrite(true);
   }
 
+  function percent() {
+    const curr = parseFloat(currentValue);
+    setCurrentValue((curr / 100).toString());
+  }
+
   function selectOperation(operation: string) {
     if (prevValue) {
       const result = calculate();
@@ -59,7 +64,13 @@ function Calculator() {
     if (currentValue[0] === "0" && digit === "0") return;
     if (currentValue.includes(".") && digit === ".") return;
     if (overwrite) {
-      setCurrentValue(digit);
+      if (currentValue === "0" && digit === ".") {
+        setCurrentValue(`${currentValue}${digit}`);
+      } else if (operation && digit === ".") {
+        setCurrentValue(`0${digit}`);
+      } else {
+        setCurrentValue(digit);
+      }
     } else {
       setCurrentValue(`${currentValue}${digit}`);
     }
@@ -88,6 +99,7 @@ function Calculator() {
         onAllClear={allClear}
         onDelete={deleteValue}
         onEquals={equals}
+        onPercentage={percent}
       />
     </div>
   );
