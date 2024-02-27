@@ -1,9 +1,13 @@
 import style from "./Screen.module.css";
 
-function Screen() {
+type Props = {
+  content: string;
+};
+
+function Screen({ content }: Props) {
   return (
     <div className={style.screen}>
-      <p className={style.screenContent}>0</p>
+      <p className={style.screenContent}>{content}</p>
     </div>
   );
 }
